@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BelajarController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -11,8 +12,19 @@ Route::get('/', function () {
 //put: ubah data(form)
 //delete: hapus data(form)
 
-Route::get('belajar', [App\Http\Controllers\BelajarController::class, 'index']);
-Route::get('tambah', [App\Http\Controllers\BelajarController::class, 'tambah'])->name('tambah');
-Route::post('tambah-action', [App\Http\Controllers\BelajarController::class, 'tambahAction'])->name('tambah-action');
-Route::get('duar/{id}', [App\Http\Controllers\BelajarController::class, 'trololo']);
-Route::get('edit', [App\Http\Controllers\BelajarController::class, 'update']);
+Route::get('belajar', [BelajarController::class, 'index'])->name('belajar');
+
+Route::get('tambah', [BelajarController::class, 'tambah'])->name('tambah');
+Route::post('tambah-action', [BelajarController::class, 'tambahAction'])->name('tambah-action');
+
+Route::get('kurang', [BelajarController::class, 'kurang'])->name('kurang');
+Route::post('kurang-action', [BelajarController::class, 'kurangAction'])->name('kurang-action');
+
+Route::get('kali', [BelajarController::class, 'kali'])->name('kali');
+Route::post('kali-action', [BelajarController::class, 'kaliAction'])->name('kali-action');
+
+Route::get('bagi', [BelajarController::class, 'bagi'])->name('bagi');
+Route::post('bagi-action', [BelajarController::class, 'bagiAction'])->name('bagi-action');
+
+Route::get('duar/{id}', [BelajarController::class, 'trololo']);
+Route::get('edit', [BelajarController::class, 'update']);

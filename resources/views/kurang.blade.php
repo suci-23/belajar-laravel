@@ -13,22 +13,21 @@
     <h3>{{ $title ?? '' }}</h3>
     <a href="{{ route('belajar') }}">Kembali</a>
 
-    <form action="{{ route('tambah-action') }}" method="post">
+    <form action="{{ route('kurang-action') }}" method="post">
         @csrf
-        <input type="hidden" name="jenis" value="tambah">
         <label for="">Angka 1</label>
-        <input type="text" name="angka1" placeholder="Angka Pertama">
+        <input type="number" name="angka1" placeholder="Angka Pertama">
         <br>
         <label for="">Angka 2</label>
-        <input type="text" name="angka2" placeholder="Angka Kedua">
+        <input type="number" name="angka2" placeholder="Angka Kedua">
         <br>
         <button type="sumbit">Hitung</button>
     </form>
 
     <h1>Hasil:</h1>
     <br>
-    <h4>{{ $angka1 ?? 0 }} + {{ $angka2 ?? 0 }} = {{ $jumlah }}</h4>
-    {{-- <h4>{{ $angka1 . '+' . $angka2 . '=' . $jumlah }}</h4> --}}
+    <h4>{{ $angka1 ?? 0 }} - {{ $angka2 ?? 0 }} = {{ $pengurangan }}</h4>
+    {{-- <h4>{{ $angka1 . '-' . $angka2 . '=' . $jumlah }}</h4> --}}
 
 </body>
 
